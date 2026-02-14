@@ -1,0 +1,34 @@
+return {
+    {
+        "williamboman/mason.nvim",
+        opts = {
+            ui = {
+                icons = {
+                    package_installed = "✓",
+                    package_pending = "➜",
+                    package_uninstalled = "✗"
+                }
+            }
+        }
+    },
+    
+    {
+        "williamboman/mason-lspconfig.nvim",
+        opts = {
+            ensure_installed = {
+		        "lua_ls",
+                "ts_ls",
+            },
+            automantic_installtion = true,
+        }
+    },
+
+    {
+        "neovim/nvim-lspconfig",
+        config = function()
+            vim.diagnostic.config({
+                virtual_text = false,
+            })
+        end,
+    },
+}
